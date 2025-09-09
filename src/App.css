@@ -1,0 +1,31 @@
+.pageBG{
+position: relative;
+width: 100vw;
+height: 100vh;
+display: flex;
+}
+
+
+.animBG{
+position: absolute;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(43, 43, 43);
+z-index: 0;
+}
+.welcome-message {
+  color: white;
+  z-index: 1;
+  font-size:40px;
+  font-family: "Readex Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
