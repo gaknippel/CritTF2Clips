@@ -4,6 +4,16 @@ import "@radix-ui/themes/styles.css";
 import LightRays from './components/LightRays';
 import Header from './components/Header';
 import Footer from './components/Footer'
+import logo from './assets/tf2darklogo.png';
+import { Split } from 'lucide-react';
+import SplitText from './components/SplitText';
+import type ShinyText from './components/ShinyText';
+
+const handleAnimationComplete = () => {
+
+  console.log('All letters have animated!');
+
+};
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +22,11 @@ function App() {
     <div>
       <Header />
       <div className='pageBG'>
-        
+        <div className='spinningLogo'>
+          <a href ="/">
+          <img src={logo} alt="logo" />
+          </a>
+        </div>
         <LightRays
           raysOrigin="top-center"
           raysColor="#ffffffff"
@@ -25,7 +39,11 @@ function App() {
           distortion={0.05}
           className="animBG"
         />
-        <p className="welcome-message">Welcome to CritTF2Clips!</p>
+        <SplitText
+        className='welcome-message'
+        text="Welcome to CritTF2Clips!"
+        delay={15}          
+        />
 
         <Footer />
       </div>
