@@ -1,50 +1,35 @@
-import { useState } from 'react'
+import { Outlet } from 'react-router-dom';
 import './App.css'
 import "@radix-ui/themes/styles.css";
-import LightRays from './components/LightRays';
 import Header from './components/Header';
 import Footer from './components/Footer'
-import logo from './assets/tf2darklogo.png';
-import { Split } from 'lucide-react';
-import SplitText from './components/SplitText';
-import type ShinyText from './components/ShinyText';
-
-const handleAnimationComplete = () => {
-
-  console.log('All letters have animated!');
-
-};
+import logo from './assets/tf2darklogo.png'
+import LightRays from './components/ReactBitsStuff/LightRays';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
       <Header />
+      <LightRays
+        raysOrigin="top-center"
+        raysColor="#ffffffff"
+        raysSpeed={1}
+        lightSpread={0.8}
+        rayLength={1}
+        followMouse={true}
+        mouseInfluence={0.01}
+        noiseAmount={0.1}
+        distortion={0.05}
+        className="animBG"
+      />
       <div className='pageBG'>
         <div className='spinningLogo'>
-          <a href ="/">
+        <a href="/">
           <img src={logo} alt="logo" />
-          </a>
-        </div>
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#ffffffff"
-          raysSpeed={1}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.01}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="animBG"
-        />
-        <SplitText
-        className='welcome-message'
-        text="Welcome to CritTF2Clips!"
-        delay={15}          
-        />
-
+        </a>
+      </div>
+        <Outlet />
         <Footer />
       </div>
     </div>

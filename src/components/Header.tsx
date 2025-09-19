@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
-import ShinyText from './ShinyText';
 
 const Header = () => {
   return (
     <header className="app-header">
       <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <a href="#submit">Submit</a>
         <a href="#support">Support</a>
       </nav>
