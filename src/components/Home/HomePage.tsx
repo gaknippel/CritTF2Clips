@@ -6,7 +6,6 @@ import './HomePage.css';
 const HomePage = () => {
   return (
     <>
-      
       <SplitText
         className='welcome-message'
         text="Welcome to CritTF2Clips!"
